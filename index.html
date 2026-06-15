@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshaysingh Chandel | Market Research & Competitive Intelligence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0f2744;
+      --blue:    #1a4a8a;
+      --accent:  #1d6fa5;
+      --light:   #4da6d5;
+      --bg:      #f8fafc;
+      --surface: #ffffff;
+      --border:  #e2e8f0;
+      --text:    #1e293b;
+      --muted:   #64748b;
+      --tag-bg:  #dbeafe;
+      --tag-txt: #1e4e8c;
+      --radius:  8px;
+      --shadow:  0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 60px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-logo span { color: var(--light); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: #fff; text-decoration: none; }
+
+    /* ===== LAYOUT ===== */
+    section { padding: 90px 5% 70px; }
+
+    .container { max-width: 1000px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    h2.section-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .section-divider {
+      width: 44px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 40px;
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      background: linear-gradient(140deg, var(--navy) 0%, #1a4a8a 60%, #1d6fa5 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+    }
+
+    .hero-inner { max-width: 1000px; margin: 0 auto; width: 100%; }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      color: #bae6fd;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero-name {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero-name span { color: var(--light); }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: #94a3b8;
+      max-width: 580px;
+      margin-bottom: 14px;
+      line-height: 1.75;
+    }
+
+    .hero-location {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+
+    .hero-location span { color: #94a3b8; }
+
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #155a84; text-decoration: none; }
+    .btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); text-decoration: none; }
+
+    /* ===== ABOUT ===== */
+    #about { background: var(--surface); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .about-text strong { color: var(--text); }
+
+    .info-list { list-style: none; margin-top: 24px; }
+
+    .info-list li {
+      display: flex;
+      gap: 12px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+
+    .info-list li:last-child { border-bottom: none; }
+    .info-label { font-weight: 600; color: var(--text); min-width: 90px; }
+    .info-val { color: var(--muted); }
+
+    /* SKILLS */
+    .skills-block h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px;
+      margin-top: 24px;
+    }
+
+    .skills-block h3:first-child { margin-top: 0; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-txt);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 4px 11px;
+      border-radius: 20px;
+    }
+
+    /* ===== PUBLICATIONS ===== */
+    #publications { background: var(--bg); }
+
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    .pub-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .pub-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .pub-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .pub-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .pub-card p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .pub-card .pub-vendor {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ===== PROJECTS ===== */
+    #projects { background: var(--surface); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .project-icon { font-size: 1.6rem; margin-bottom: 12px; }
+
+    .project-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+
+    .project-tag {
+      background: #f1f5f9;
+      color: var(--muted);
+      font-size: 0.73rem;
+      padding: 3px 9px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .project-links { display: flex; gap: 12px; }
+
+    .project-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .project-link:hover { text-decoration: underline; }
+
+    .badge-coming {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #075985;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-left: 7px;
+      vertical-align: middle;
+    }
+
+    /* ===== EXPERIENCE ===== */
+    #experience { background: var(--bg); }
+
+    .timeline { position: relative; padding-left: 28px; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item { position: relative; margin-bottom: 36px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -25px;
+      top: 7px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .timeline-meta {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-bottom: 3px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .timeline-period {
+      background: var(--tag-bg);
+      color: var(--tag-txt);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1px;
+    }
+
+    .timeline-item h4 {
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .timeline-item ul {
+      padding-left: 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .timeline-item ul li { margin-bottom: 5px; line-height: 1.6; }
+
+    /* Education */
+    .edu-section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+      margin-top: 56px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+    }
+
+    .edu-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; line-height: 1.4; }
+    .edu-card p { font-size: 0.82rem; color: var(--muted); }
+    .edu-card .year { font-size: 0.76rem; color: var(--accent); font-weight: 600; margin-top: 6px; }
+
+    /* ===== CONTACT ===== */
+    #contact { background: var(--surface); }
+
+    .contact-inner { max-width: 580px; }
+
+    .contact-intro {
+      color: var(--muted);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s;
+    }
+
+    .contact-row:hover { border-color: var(--accent); }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--tag-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail .label { font-size: 0.72rem; color: var(--muted); font-weight: 500; }
+    .contact-detail .value { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy);
+      color: #64748b;
+      text-align: center;
+      padding: 22px;
+      font-size: 0.8rem;
+    }
+
+    footer span { color: var(--light); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Akshaysingh<span>.</span>Chandel</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#publications">Research</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Market Research · Competitive Intelligence · ICT & Supply Chain</div>
+    <h1 class="hero-name">Akshaysingh <span>Chandel</span></h1>
+    <p class="hero-subtitle">
+      Research analyst with 3+ years delivering actionable competitive intelligence across
+      global ICT and supply chain technology markets — from SPARK Matrix vendor evaluations
+      to market sizing and C-suite strategic briefings.
+    </p>
+    <p class="hero-location"><span>📍</span> Manchester, United Kingdom · Open to opportunities</p>
+    <div class="hero-btns">
+      <a href="#publications" class="btn btn-primary">View Published Research</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="section-divider"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a <strong>Market Research &amp; Competitive Intelligence professional</strong> with experience
+          producing SPARK Matrix reports across Supply Chain Management, Unified Commerce, and Procurement Technology —
+          published work that has been cited by global enterprise vendors including <strong>GEP, GreyOrange, Radial,
+          and CobbleStone</strong> in their own press releases.
+        </p>
+        <p>
+          I combine an <strong>engineering background</strong> with <strong>dual MBA qualifications</strong>,
+          giving me both the analytical rigour to handle complex, multi-source research and the commercial
+          acumen to translate findings into clear business recommendations for senior stakeholders.
+        </p>
+        <p>
+          Each day I build new projects at the intersection of data analysis, business intelligence, and
+          technology research — expanding my capabilities and sharing the work here.
+        </p>
+        <ul class="info-list">
+          <li><span class="info-label">Location</span><span class="info-val">Manchester, UK</span></li>
+          <li><span class="info-label">Email</span><span class="info-val">akshaysingh19593@gmail.com</span></li>
+          <li><span class="info-label">Degree</span><span class="info-val">MBA (×2) · BE Computer Engineering</span></li>
+          <li><span class="info-label">Focus</span><span class="info-val">Research, Competitive Intelligence, ICT Markets</span></li>
+        </ul>
+      </div>
+
+      <div class="skills-block">
+        <h3>Research &amp; Intelligence</h3>
+        <div class="tags">
+          <span class="tag">Competitive Benchmarking</span>
+          <span class="tag">Market Sizing &amp; TAM</span>
+          <span class="tag">SPARK Matrix</span>
+          <span class="tag">Vendor Evaluation</span>
+          <span class="tag">Primary Research</span>
+          <span class="tag">Megatrend Analysis</span>
+        </div>
+
+        <h3>Domain Expertise</h3>
+        <div class="tags">
+          <span class="tag">ICT</span>
+          <span class="tag">Supply Chain Mgmt</span>
+          <span class="tag">Unified Commerce</span>
+          <span class="tag">Omnichannel Retail</span>
+          <span class="tag">Procurement Tech</span>
+          <span class="tag">Enterprise B2B</span>
+        </div>
+
+        <h3>Stakeholder Engagement</h3>
+        <div class="tags">
+          <span class="tag">C-Suite Briefings</span>
+          <span class="tag">SLT Presentations</span>
+          <span class="tag">Client Consulting</span>
+          <span class="tag">Cross-functional Collab</span>
+        </div>
+
+        <h3>Communication</h3>
+        <div class="tags">
+          <span class="tag">Research Report Writing</span>
+          <span class="tag">Business Storytelling</span>
+          <span class="tag">Executive Presentation</span>
+          <span class="tag">Counter-questioning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLISHED RESEARCH -->
+<section id="publications">
+  <div class="container">
+    <p class="section-label">Published Work</p>
+    <h2 class="section-title">SPARK Matrix Research</h2>
+    <div class="section-divider"></div>
+    <p style="color:var(--muted); margin-bottom: 32px; max-width: 680px; font-size: 0.92rem; line-height: 1.8;">
+      SPARK Matrix reports authored at Quadrant Knowledge Solutions — cited in press releases by
+      global enterprise technology vendors across Supply Chain and Procurement domains.
+    </p>
+    <div class="pub-grid">
+
+      <div class="pub-card">
+        <div class="pub-badge">Published · 2022</div>
+        <h3>Omnichannel Order Management Systems (OMS)</h3>
+        <p>Competitive positioning and vendor evaluation across global OMS market. Radial positioned as Leader.</p>
+        <div class="pub-vendor">📢 Cited by Radial</div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-badge">Published</div>
+        <h3>Strategic Sourcing Application</h3>
+        <p>Market sizing and competitive benchmarking across strategic sourcing and procurement technology solutions.</p>
+        <div class="pub-vendor">📢 Cited by GEP</div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-badge">Published</div>
+        <h3>Autonomous Mobile Robot (AMR)</h3>
+        <p>Vendor evaluation and growth opportunity identification across the autonomous mobile robotics market.</p>
+        <div class="pub-vendor">📢 Cited by GreyOrange</div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-badge">Published</div>
+        <h3>Procure-to-Pay (P2P)</h3>
+        <p>Assessment of enterprise P2P solutions covering market share, performance parameters, and regional trajectory.</p>
+        <div class="pub-vendor">📢 Cited by GEP</div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-badge">Published · 2022</div>
+        <h3>Contract Lifecycle Management (CLM)</h3>
+        <p>Competitive intelligence across CLM vendors. CobbleStone named Leader in the evaluation.</p>
+        <div class="pub-vendor">📢 Cited by CobbleStone</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS (Daily Work) -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Daily Work</p>
+    <h2 class="section-title">Projects &amp; Analyses</h2>
+    <div class="section-divider"></div>
+    <p style="color:var(--muted); margin-bottom: 32px; max-width: 680px; font-size: 0.92rem; line-height: 1.8;">
+      A growing collection of hands-on projects I build each day — data analysis, market research,
+      and business intelligence work. Updated regularly.
+    </p>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon">📊</div>
+        <h3>Project 1<span class="badge-coming">Coming Soon</span></h3>
+        <p>
+          Your first daily project will appear here. Could be a market analysis,
+          data deep-dive, industry report, or a Python-powered insight piece.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Analysis</span>
+        </div>
+        <div class="project-links">
+          <span style="font-size:0.8rem; color:var(--muted);">In progress…</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🔍</div>
+        <h3>Project 2<span class="badge-coming">Coming Soon</span></h3>
+        <p>
+          Add research projects, Kaggle notebooks, competitive snapshots, or
+          sector write-ups here as you complete them.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Research</span>
+        </div>
+        <div class="project-links">
+          <span style="font-size:0.8rem; color:var(--muted);">In progress…</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📈</div>
+        <h3>Project 3<span class="badge-coming">Coming Soon</span></h3>
+        <p>
+          Market sizing exercise, trend report, or business intelligence piece.
+          Each completed project becomes a recruiters' window into how you think.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Intelligence</span>
+        </div>
+        <div class="project-links">
+          <span style="font-size:0.8rem; color:var(--muted);">In progress…</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Work History</h2>
+    <div class="section-divider"></div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">Feb 2023 – Present</span>
+          <span>Manchester, UK</span>
+        </div>
+        <h3>Duty Manager – Operations &amp; Guest Experience</h3>
+        <h4>Maldron Hotels</h4>
+        <ul>
+          <li>Analysed daily revenue reports, covers data, and footfall patterns to identify trends, flag underperformance, and recommend corrective actions.</li>
+          <li>Conducted competitor rate analysis across the local Manchester market to benchmark pricing and support revenue management decisions.</li>
+          <li>Managed shift teams of 8–12 across departments, maintaining high service delivery and guest satisfaction standards.</li>
+          <li>Planned and executed end-to-end corporate and social events — from client briefs to on-ground delivery.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">May 2019 – Jan 2023</span>
+          <span>Pune, India</span>
+        </div>
+        <h3>Market Research Analyst</h3>
+        <h4>Quadrant Knowledge Solutions</h4>
+        <ul>
+          <li>Delivered SPARK Matrix competitive intelligence reports across Supply Chain Management and Unified Commerce domains — cited in press releases by GEP, GreyOrange, Radial, and CobbleStone.</li>
+          <li>Conducted end-to-end market sizing and competitive analysis — evaluating vendors across performance parameters, market share, and growth trajectory by segment and region.</li>
+          <li>Led strategic briefing sessions and presentations with C-suite executives at leading technology vendors, fielding counter-questions on market data and research conclusions.</li>
+          <li>Conducted primary research through user surveys and interviews — capturing ground-level insights on technology adoption and deployment challenges.</li>
+          <li>Produced actionable intelligence to support vendor selection strategy for enterprise buyers across 180+ countries.</li>
+          <li>Tracked emerging megatrends and industry convergence patterns across ICT and supply chain technology sectors.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">Mar 2019 – May 2019</span>
+          <span>Mumbai, India</span>
+        </div>
+        <h3>Business Development Executive</h3>
+        <h4>e-Port Logistics Pvt Ltd</h4>
+        <ul>
+          <li>Managed air and sea freight forwarding operations for domestic and international shipments.</li>
+          <li>Handled client acquisition, CRM updates, quotation preparation, and negotiation with logistics partners.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">May 2018 – Jul 2018</span>
+          <span>Pune, India</span>
+        </div>
+        <h3>Summer Intern</h3>
+        <h4>Apogee Logistics (India) Pvt Ltd</h4>
+        <ul>
+          <li>Supported operations and client coordination, gaining exposure to supply chain workflows and documentation.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Education -->
+    <p class="edu-section-title">Education</p>
+    <div class="education-grid">
+      <div class="edu-card">
+        <h3>MBA – International Marketing &amp; Business Administration</h3>
+        <p>Bangor University, UK</p>
+        <p class="year">Jan 2023 – Jan 2024</p>
+      </div>
+      <div class="edu-card">
+        <h3>MBA – Operations Management &amp; Supervision</h3>
+        <p>Vidyalankar Institute of Technology, Mumbai</p>
+        <p class="year">2017 – 2019</p>
+      </div>
+      <div class="edu-card">
+        <h3>BE – Computer Engineering</h3>
+        <p>AISSMS College of Engineering, Pune University</p>
+        <p class="year">2013 – 2015</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="section-divider"></div>
+    <div class="contact-inner">
+      <p class="contact-intro">
+        I'm open to Market Research, Competitive Intelligence, Business Analysis,
+        and Strategy roles. Feel free to reach out — whether it's about a role,
+        a collaboration, or just a conversation about markets and data.
+      </p>
+      <div class="contact-links">
+        <div class="contact-row">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-detail">
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:akshaysingh19593@gmail.com">akshaysingh19593@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">💼</div>
+          <div class="contact-detail">
+            <div class="label">LinkedIn</div>
+            <div class="value"><a href="https://www.linkedin.com/in/akshaysingh-chandel-83a68a103/" target="_blank">akshaysingh-chandel-83a68a103</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🐙</div>
+          <div class="contact-detail">
+            <div class="label">GitHub</div>
+            <div class="value"><a href="https://github.com/Akspri1910" target="_blank">github.com/Akspri1910</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📄</div>
+          <div class="contact-detail">
+            <div class="label">Resume</div>
+            <div class="value"><a href="Akshaysingh_Chandel_resume.pdf" target="_blank">Download Resume (PDF)</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Built by <span>Akshaysingh Chandel</span> · Manchester, UK · 2026</p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

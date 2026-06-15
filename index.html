@@ -286,6 +286,73 @@
       color: var(--accent);
     }
 
+    /* PRESS CITATIONS */
+    .press-section { margin-top: 56px; }
+
+    .press-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .press-subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .press-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s;
+      text-decoration: none;
+    }
+
+    .press-item:hover { border-color: var(--accent); text-decoration: none; }
+
+    .press-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .press-item-content .press-company {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .press-item-content .press-headline {
+      font-size: 0.83rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.4;
+      margin-top: 2px;
+    }
+
+    .press-item-content .press-wire {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
     /* ===== PROJECTS ===== */
     #projects { background: var(--surface); }
 
@@ -538,8 +605,7 @@
     <h1 class="hero-name">Akshaysingh <span>Chandel</span></h1>
     <p class="hero-subtitle">
       Research analyst with 3+ years delivering actionable competitive intelligence across
-      global ICT and supply chain technology markets — from SPARK Matrix vendor evaluations
-      to market sizing and C-suite strategic briefings.
+      global ICT and supply chain technology markets. Published work cited in <strong style="color:#fff;">13+ press releases</strong> by enterprise vendors including Icertis, GreyOrange, CobbleStone, Radial, and a Shopify company — across AMR, CLM, OMS, P2P, and Supply Chain domains.
     </p>
     <p class="hero-location"><span>📍</span> Manchester, United Kingdom · Open to opportunities</p>
     <div class="hero-btns">
@@ -668,7 +734,132 @@
         <div class="pub-vendor">📢 Cited by CobbleStone</div>
       </div>
 
+    <!-- PRESS CITATIONS -->
+    <div class="press-section">
+      <p class="press-title">📰 As Quoted In</p>
+      <p class="press-subtitle">Research cited directly in press releases by global enterprise technology vendors — click to verify.</p>
+      <div class="press-grid">
+
+        <a class="press-item" href="https://www.businesswire.com/news/home/20201119005129/en/6-River-Systems-Named-a-2020-SPARK-Matrix-Leader-in-the-Global-Autonomous-Mobile-Robot-Market-by-Quadrant-Knowledge-Solutions" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">6 River Systems (Shopify)</div>
+            <div class="press-headline">SPARK Matrix Leader — Autonomous Mobile Robot (AMR) 2020</div>
+            <div class="press-wire">BusinessWire</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.greyorange.com/resource/quadrant-spark-matrix-recognizes-greyorange-2023/" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">GreyOrange</div>
+            <div class="press-headline">SPARK Matrix Recognition — Autonomous Mobile Robot (AMR) 2023</div>
+            <div class="press-wire">GreyOrange Press Room</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.cobblestonesoftware.com/press-room/cobblestone-named-leader-in-2022-spark-matrix-for-contract-lifecycle-management-clm-by-quadrant-knowledge-solutions" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">CobbleStone Software</div>
+            <div class="press-headline">SPARK Matrix Leader — Contract Lifecycle Management (CLM) 2022</div>
+            <div class="press-wire">CobbleStone Press Room</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.radial.com/resources/press-room/radial-positioned-as-the-leader-in-the-2022-spark-matrix-for-omnichannel-order-management-systems-oms-by-quadrant-knowledge-solutions" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">Radial</div>
+            <div class="press-headline">SPARK Matrix Leader — Omnichannel Order Management Systems (OMS) 2022</div>
+            <div class="press-wire">Radial Press Room</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.prnewswire.com/news-releases/icertis-named-as-a-2020-spark-matrix-leader-in-the-strategic-sourcing-application-market-by-quadrant-knowledge-solutions-301194937.html" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">Icertis</div>
+            <div class="press-headline">SPARK Matrix Leader — Strategic Sourcing Application 2020</div>
+            <div class="press-wire">PRNewswire</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.prnewswire.com/news-releases/elcom-systems-ltd-named-as-a-2021-technology-leader-in-quadrant-knowledge-solutions-spark-matrix-for-procure-to-pay-p2p-2021-301423980.html" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">Elcom Systems</div>
+            <div class="press-headline">SPARK Matrix Technology Leader — Procure-to-Pay (P2P) 2021</div>
+            <div class="press-wire">PRNewswire</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.prnewswire.com/news-releases/revionics-recognized-as-a-technology-leader-in-quadrant-knowledge-solutions-spark-matrix-for-intelligent-retail-pricing-and-promotion-optimization-2021-301442243.html" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">Revionics</div>
+            <div class="press-headline">SPARK Matrix Technology Leader — Intelligent Retail Pricing & Promotion 2021</div>
+            <div class="press-wire">PRNewswire</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://assecobs.pl/blog/asseco-business-solutions-liderem-technologicznym-na-rynku-sfa/" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">Asseco Business Solutions</div>
+            <div class="press-headline">SPARK Matrix Technology Leader — Sales Force Automation (SFA)</div>
+            <div class="press-wire">Asseco Press Room</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.prnewswire.com/news-releases/apttus-is-positioned-as-2019-technology-leader-in-the-contract-lifecycle-management-market-by-quadrant-knowledge-solutions-301045929.html" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">Apttus (now Conga)</div>
+            <div class="press-headline">SPARK Matrix Technology Leader — Contract Lifecycle Management (CLM) 2019</div>
+            <div class="press-wire">PRNewswire</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.prnewswire.com/news-releases/mpo-named-as-a-2021-technology-leader-in-quadrant-knowledge-solutions-spark-matrix-for-multi-enterprise-supply-chain-business-networks-mescbn-2021-301461197.html" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">MPO</div>
+            <div class="press-headline">SPARK Matrix Technology Leader — Multi-Enterprise Supply Chain Business Networks (MESCBN) 2021</div>
+            <div class="press-wire">PRNewswire</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.prnewswire.com/news-releases/symphony-retailai-is-positioned-as-a-leader-in-the-2021-spark-matrix-for-omnichannel-order-management-systems-by-quadrant-knowledge-solutions-301264952.html" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">Symphony RetailAI</div>
+            <div class="press-headline">SPARK Matrix Leader — Omnichannel Order Management Systems (OMS) 2021</div>
+            <div class="press-wire">PRNewswire</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.prnewswire.com/news-releases/nulogy-named-as-a-2021-technology-leader-in-quadrant-knowledge-solutions-spark-matrix-for-multi-enterprise-supply-chain-business-networks-301484848.html" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">Nulogy</div>
+            <div class="press-headline">SPARK Matrix Technology Leader — Multi-Enterprise Supply Chain Business Networks 2021</div>
+            <div class="press-wire">PRNewswire</div>
+          </div>
+        </a>
+
+        <a class="press-item" href="https://www.linkedin.com/posts/willharaway_analyst-relations-is-often-a-mystery-box-share-7019780620075626496-eykZ/" target="_blank">
+          <div class="press-dot"></div>
+          <div class="press-item-content">
+            <div class="press-company">Industry Recognition</div>
+            <div class="press-headline">Referenced in analyst relations discussion by industry professional</div>
+            <div class="press-wire">LinkedIn</div>
+          </div>
+        </a>
+
+      </div>
     </div>
+
   </div>
 </section>
 

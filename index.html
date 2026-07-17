@@ -75,6 +75,12 @@
     .skills-block h3:first-child { margin-top: 0; }
     .tags { display: flex; flex-wrap: wrap; gap: 7px; }
     .tag { background: var(--tag-bg); color: var(--tag-txt); font-size: 0.78rem; font-weight: 500; padding: 4px 11px; border-radius: 20px; }
+    #education { background: var(--bg); }
+    .education-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .edu-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
+    .edu-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; line-height: 1.4; }
+    .edu-card p { font-size: 0.82rem; color: var(--muted); }
+    .edu-card .year { font-size: 0.76rem; color: var(--accent); font-weight: 600; margin-top: 6px; }
     #publications { background: var(--bg); }
     .pub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
     .pub-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 20px; box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s; }
@@ -93,12 +99,12 @@
     .press-item-content .press-company { font-size: 0.72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; }
     .press-item-content .press-headline { font-size: 0.83rem; font-weight: 500; color: var(--text); line-height: 1.4; margin-top: 2px; }
     .press-item-content .press-wire { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
-    #experience { background: var(--bg); }
+    #experience { background: var(--surface); }
     .timeline { position: relative; padding-left: 28px; }
     .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
     .timeline-item { position: relative; margin-bottom: 36px; }
     .timeline-item:last-child { margin-bottom: 0; }
-    .timeline-dot { position: absolute; left: -25px; top: 7px; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--accent); }
+    .timeline-dot { position: absolute; left: -25px; top: 7px; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); border: 3px solid var(--surface); box-shadow: 0 0 0 2px var(--accent); }
     .timeline-meta { font-size: 0.76rem; color: var(--muted); margin-bottom: 3px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
     .timeline-period { background: var(--tag-bg); color: var(--tag-txt); font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
     .timeline-item h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 1px; }
@@ -106,12 +112,6 @@
     .timeline-item ul { padding-left: 16px; color: var(--muted); font-size: 0.86rem; }
     .timeline-item ul li { margin-bottom: 5px; line-height: 1.6; }
     .timeline-intro { color: var(--muted); font-size: 0.86rem; line-height: 1.7; margin-bottom: 8px; }
-    .edu-section-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; margin-top: 56px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
-    .education-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-    .edu-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
-    .edu-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; line-height: 1.4; }
-    .edu-card p { font-size: 0.82rem; color: var(--muted); }
-    .edu-card .year { font-size: 0.76rem; color: var(--accent); font-weight: 600; margin-top: 6px; }
     #contact { background: var(--surface); }
     .contact-inner { max-width: 580px; }
     .contact-intro { color: var(--muted); margin-bottom: 30px; line-height: 1.8; }
@@ -135,6 +135,7 @@
   <div class="nav-logo">Akshaysingh<span>.</span>Chandel</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#publications">Research</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -207,6 +208,31 @@
           <span class="tag">Executive Presentation</span>
           <span class="tag">Counter-questioning</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <p class="section-label">Education</p>
+    <h2 class="section-title">Academic Background</h2>
+    <div class="section-divider"></div>
+    <div class="education-grid">
+      <div class="edu-card">
+        <h3>MBA – International Marketing & Business Administration</h3>
+        <p>Bangor University, UK</p>
+        <p class="year">Jan 2023 – Jan 2024</p>
+      </div>
+      <div class="edu-card">
+        <h3>MBA – Operations Management & Supervision</h3>
+        <p>Vidyalankar Institute of Technology, Mumbai</p>
+        <p class="year">2017 – 2019</p>
+      </div>
+      <div class="edu-card">
+        <h3>BE – Computer Engineering</h3>
+        <p>AISSMS College of Engineering, Pune University</p>
+        <p class="year">2013 – 2015</p>
       </div>
     </div>
   </div>
@@ -453,24 +479,6 @@
         <ul>
           <li>Supported operations and client coordination, gaining exposure to supply chain workflows and documentation.</li>
         </ul>
-      </div>
-    </div>
-    <p class="edu-section-title">Education</p>
-    <div class="education-grid">
-      <div class="edu-card">
-        <h3>MBA – International Marketing & Business Administration</h3>
-        <p>Bangor University, UK</p>
-        <p class="year">Jan 2023 – Jan 2024</p>
-      </div>
-      <div class="edu-card">
-        <h3>MBA – Operations Management & Supervision</h3>
-        <p>Vidyalankar Institute of Technology, Mumbai</p>
-        <p class="year">2017 – 2019</p>
-      </div>
-      <div class="edu-card">
-        <h3>BE – Computer Engineering</h3>
-        <p>AISSMS College of Engineering, Pune University</p>
-        <p class="year">2013 – 2015</p>
       </div>
     </div>
   </div>
